@@ -1,0 +1,117 @@
+:root {
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.8;
+  margin: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+  outline: none !important;
+}
+
+/*===============================================================
+Header
+===============================================================*/
+#drink-header {
+  padding: 0;
+
+  .drink-banner {
+    background-image: url("../img/thumbs/home-banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    height: 100vh;
+
+    .drink-banner__navbar {
+      background-color: rgba(255, 255, 255, 0.2);
+      max-height: 40px;
+      padding: 0 100px;
+      .drink-banner__link {
+        color: #fffafa;
+      }
+
+      .drink-banner__link:hover {
+        color: #d69f1e;
+        text-decoration: underline;
+      }
+
+      .drink-banner__form {
+        .drink-banner__input {
+          color: #fffafa;
+          font-size: 14px;
+          max-height: 25px;
+          background-color: transparent;
+          border: none;
+          border-left: 1px solid #fff;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          -ms-border-radius: 0;
+          -o-border-radius: 0;
+        }
+
+        .drink-banner__input:focus {
+          outline: none;
+          box-shadow: none;
+        }
+
+        .drink-banner__search-button {
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .drink-banner__search-button:hover,
+        .drink-banner__search-button:focus {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .drink-navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    height: 100px;
+
+    .drink-navbar__brand {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .drink-navbar__image {
+        max-height: 100px;
+        width: auto;
+      }
+    }
+
+    .drink-navbar__item {
+      margin-left: 20px;
+
+      .drink-navbar__link {
+        color: #fffafa;
+        text-transform: capitalize;
+      }
+
+      .active {
+        color: #d69f1e;
+      }
+
+      .drink-navbar__link:hover {
+        color: #d69f1e;
+      }
+    }
+  }
+}
