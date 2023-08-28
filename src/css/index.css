@@ -481,6 +481,7 @@ Footer
           text-transform: uppercase;
           font-size: 12px;
           .footer-list__item {
+            color: #9ba6a5;
             margin-top: 5px;
             & a {
               text-decoration: none;
@@ -489,6 +490,11 @@ Footer
 
             & a:hover {
               color: #5f6769;
+            }
+
+            & img {
+              width: 10px;
+              height: auto;
             }
           }
         }
