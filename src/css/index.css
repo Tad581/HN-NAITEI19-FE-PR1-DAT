@@ -120,6 +120,28 @@ Header
       }
     }
   }
+
+  .drink-banner--no-bg {
+    background-image: none;
+    height: auto;
+
+    .drink-banner__navbar {
+      background-color: #fff;
+      max-height: 40px;
+      padding: 0 100px;
+
+      .drink-banner__link {
+        color: #5f6769;
+      }
+
+      .drink-banner__form {
+        .drink-banner__input {
+          color: #5f6769;
+        }
+      }
+    }
+  }
+
   .drink-navbar {
     display: flex;
     justify-content: center;
@@ -517,6 +539,30 @@ Footer
         font-size: 14px;
         color: #9ba6a5;
       }
+    }
+  }
+}
+
+/*===============================================================
+Breadcrumb
+===============================================================*/
+.drink-breadcrumb {
+  .breadcrumb {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+
+    .breadcrumb-item a{
+      color: #000;
+    }
+
+    .breadcrumb-item a:hover{
+      text-decoration: none;
+    }
+
+    .active {
+      color: #d69f1e;
     }
   }
 }
