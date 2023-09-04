@@ -59,18 +59,16 @@ const renderProducts = async () => {
   const response = await fetch(fetchUrlLimited);
   const products = await response.json();
 
-  console.log(
-    "🚀 ~ file: product.js:56 ~ renderProducts ~ fetchUrlLimited:",
-    fetchUrlLimited
-  );
   products.forEach((product) => {
     const productNode = document.createElement("div");
     productNode.id = `productID-${product.id}`;
     productNode.classList.add("product-thumbnail");
     productNode.classList.add("col-12");
     productNode.classList.add("col-md-4");
-
-    productNode.innerHTML = `<img src="${product.images[0]}" alt="product"class="d-block w-100"/><div class="product-info product-info--center"><a class="product-title product-title--new-size" href="#">${product.name}</a><p class="product-price">${product.prices[0]} <span>đ</span></p><div class="drink-btn"><a href="#">Add to cart</a></div></div>`;
+    productNode.innerHTML = `<img src="${product.images[0]}" alt="product"class="d-block w-100"/><div class="product-info product-info--center"><a class="product-title product-title--new-size" href="detail.html">${product.name}</a><p class="product-price">${product.prices[0]} <span>đ</span></p><div class="drink-btn"><a href="#">Add to cart</a></div></div>`;
+    productNode.onclick = () => {
+      localStorage.setItem("productId", product.id);
+    };
     productsId.appendChild(productNode);
   });
 
