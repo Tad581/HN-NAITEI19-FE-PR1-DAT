@@ -157,5 +157,14 @@
       "prices": ["370.000", "450.000"]
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "id": 1,
+      "image": "",
+      "name": "",
+      "price": "",
+      "quantity": "",
+      "total": ""
+    }
+  ]
 }

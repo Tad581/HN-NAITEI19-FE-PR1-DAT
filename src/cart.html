@@ -19,7 +19,7 @@
     />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" href="./css/introduce.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
     <title>Drink</title>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -73,7 +73,9 @@
               >
             </li>
             <li class="drink-banner__item nav-item">
-              <a class="drink-banner__link nav-link" href="cart.html">Giỏ hàng</a>
+              <a class="drink-banner__link nav-link" href="cart.html"
+                >Giỏ hàng</a
+              >
             </li>
             <li class="drink-banner__item nav-item">
               <a class="drink-banner__link nav-link" href="#">Đăng nhập</a>
@@ -130,7 +132,9 @@
               >
             </li>
             <li class="drink-navbar__item nav-item">
-              <a class="drink-navbar__link nav-link" href="products.html">Rượu vang đỏ</a>
+              <a class="drink-navbar__link nav-link" href="products.html"
+                >Rượu vang đỏ</a
+              >
             </li>
             <li class="drink-navbar__item nav-item">
               <a class="drink-navbar__link nav-link" href="#">Rượu trắng</a>
@@ -139,14 +143,12 @@
               <a class="drink-navbar__link nav-link" href="#">Champagne</a>
             </li>
             <li class="drink-navbar__item nav-item">
-              <a
-                class="drink-navbar__link nav-link active"
-                href="introduce.html"
+              <a class="drink-navbar__link nav-link" href="introduce.html"
                 >Thông tin</a
               >
             </li>
             <li class="drink-navbar__item nav-item">
-              <a class="drink-navbar__link nav-link" href="blogs.html">Blog</a>
+              <a class="drink-navbar__link nav-link active" href="#">Blog</a>
             </li>
             <li class="drink-navbar__item nav-item">
               <a class="drink-navbar__link nav-link" href="#">Liên hệ</a>
@@ -157,42 +159,62 @@
     </div>
   </header>
   <body>
-    <div class="drink-body drink-introduce-body container">
+    <div class="drink-body container">
       <div class="drink-breadcrumb">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Giới thiệu
-            </li>
+            <li class="breadcrumb-item">Sản phẩm</li>
+            <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
           </ol>
         </nav>
       </div>
       <div class="product-info">
         <p class="product-title product-title--left">
-          Giới thiệu
+          Giỏ hàng
           <img src="./img/thumbs/titleleft-dark.png" alt="title left dark" />
         </p>
       </div>
-      <div class="drink-introduce row">
-        <div class="drink-introduce__thumb col-12 col-md-5">
-          <img src="./img/thumbs/grape-green.jpg" alt="grape image" />
-        </div>
-        <div class="drink-introduce__desc col-12 col-md-7">
-          <h2 class="drink-title">Chào mừng đến với wine hourse</h2>
-          <p class="drink-desc">
-            Vang nổ Thăng Long có hương vị đặc trưng của sản phẩm lên men tự
-            nhiên từ hoa quả có độ rượu nhẹ, bọt ga đầy trắng mịn. Vang nổ Thăng
-            Long tạo cảm giác hưng phấn, êm dịu, vui tươi, sản phẩm được đóng
-            chai dung tích 750ml. Vang nổ Thăng Long có hương vị đặc trưng của
-            sản phẩm lên men tự nhiên từ hoa quả có độ rượu nhẹ, bọt ga đầy
-            trắng mịn. Vang nổ Thăng Long tạo cảm giác hưng phấn, êm dịu, vui
-            tươi, sản phẩm được đóng chai dung tích 750ml. Vang nổ Thăng Long có
-            hương vị đặc trưng của sản phẩm lên men tự nhiên từ hoa quả có độ
-            rượu nhẹ, bọt ga đầy trắng mịn. Vang nổ Thăng Long tạo cảm giác hưng
-            phấn, êm dịu, vui tươi, sản phẩm được đóng chai dung tích 750ml.
-          </p>
-        </div>
+
+      <div class="drink-cart">
+        <table class="drink-cart__table table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Ảnh</th>
+              <th scope="col">Tên sản phẩm</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Số lượng</th>
+              <th scope="col">Tổng số</th>
+              <th scope="col">Xóa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="align-middle">
+                <div class="drink-table__image">
+                  <img src="./img/products/1.jpg" alt="wine" />
+                </div>
+              </th>
+              <td class="align-middle">
+                <div class="drink-table__name">Rượu vang đỏ</div>
+              </td>
+              <td class="align-middle">
+                <div class="drink-table__price">350.000 <span>đ</span></div>
+              </td>
+              <td class="align-middle">
+                <div class="drink-table__quantity">1</div>
+              </td>
+              <td class="align-middle">
+                <div class="drink-table__total">350.000 <span>đ</span></div>
+              </td>
+              <td class="align-middle">
+                <div class="drink-table__icon">
+                  <img src="./img/icon/trash.svg" alt="trash icon" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </body>
@@ -234,10 +256,7 @@
           <h2 class="footer-title">Liên hệ</h2>
           <ul class="footer-list">
             <li class="footer-list__item">
-              <img
-                src="./img/icon/location-dot-solid.svg"
-                alt="locate icon"
-              />
+              <img src="./img/icon/location-dot-solid.svg" alt="locate icon" />
               Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn P.Cống Vị, Q.Ba Đình,
               Hà Nội
             </li>
