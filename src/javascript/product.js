@@ -1,25 +1,68 @@
 const productsId = document.getElementById("products-list__products");
 
-const currentPage = 1;
+const paginateContainerId = document.getElementById(
+  "product-paginate__container"
+);
 
 const renderProducts = async () => {
   while (productsId.lastElementChild) {
     productsId.removeChild(productsId.lastElementChild);
   }
 
+  while (paginateContainerId.lastElementChild) {
+    paginateContainerId.removeChild(paginateContainerId.lastElementChild);
+  }
+
   const category = localStorage.getItem("filterKeyword");
+  const currentPage = localStorage.getItem("currentPage");
 
   const fetchUrl =
     category !== "all"
-      ? `http://localhost:3000/products?category=${category}&_page${currentPage}&_limit=9`
-      : `http://localhost:3000/products?_page${currentPage}&_limit=9`;
-  const response = await fetch(fetchUrl);
-  const products = await response.json();
-  console.log(
-    "🚀 ~ file: product.js:17 ~ renderProducts ~ fetchUrl:",
-    fetchUrl
-  );
+      ? `http://localhost:3000/products?category=${category}`
+      : `http://localhost:3000/products?`;
 
+  const responseAll = await fetch(fetchUrl);
+  const productsAll = await responseAll.json();
+
+  const paginateSize = Math.ceil(productsAll.length / 9);
+
+  const prevNode = document.createElement("li");
+  prevNode.classList.add("page-item");
+  prevNode.innerHTML =
+    '<a class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a>';
+  paginateContainerId.appendChild(prevNode);
+
+  for (let i = 0; i < paginateSize; i++) {
+    const itemNode = document.createElement("li");
+    if (currentPage == i + 1) itemNode.classList.add("active");
+    itemNode.classList.add("page-item");
+    itemNode.innerHTML = `<a class="page-link product-paginate__link">${
+      i + 1
+    }</a>`;
+    itemNode.onclick = () => {
+      localStorage.setItem("currentPage", i + 1);
+      renderProducts();
+    };
+    paginateContainerId.appendChild(itemNode);
+  }
+
+  const nextNode = document.createElement("li");
+  nextNode.classList.add("page-item");
+  nextNode.innerHTML =
+    '<a class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a>';
+  paginateContainerId.appendChild(nextNode);
+
+  const fetchUrlLimited =
+    category !== "all"
+      ? `http://localhost:3000/products?category=${category}&_page=${currentPage}&_limit=9`
+      : `http://localhost:3000/products?_page=${currentPage}&_limit=9`;
+  const response = await fetch(fetchUrlLimited);
+  const products = await response.json();
+
+  console.log(
+    "🚀 ~ file: product.js:56 ~ renderProducts ~ fetchUrlLimited:",
+    fetchUrlLimited
+  );
   products.forEach((product) => {
     const productNode = document.createElement("div");
     productNode.id = `productID-${product.id}`;
@@ -32,6 +75,7 @@ const renderProducts = async () => {
   });
 
   localStorage.setItem("filterKeyword", "all");
+  localStorage.setItem("currentPage", 1);
 };
 
 renderProducts();
