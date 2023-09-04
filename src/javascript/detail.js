@@ -21,6 +21,34 @@ const renderProduct = async () => {
 
   const imageNode = document.getElementById("product-image");
   imageNode.innerHTML = `<img src="${product.images[0]}" alt="wine" id="images-item-main"  />`;
+
+  const btnNode = document.getElementById("product-btn--add");
+  const quantityNode = document.getElementById("quantityPicker");
+
+  btnNode.onclick = () => {
+    const addProduct = {
+      productId: product.id,
+      name: product.name,
+      image: product.images[0],
+      price: Number.parseInt(product.prices[0]) * 1000,
+      quantity: Number.parseInt(quantityNode.value),
+      total:
+        Number.parseInt(product.prices[0]) *
+        1000 *
+        Number.parseInt(quantityNode.value),
+    };
+
+    const currentCart = localStorage.getItem("currentCart");
+    if (currentCart) {
+      const cart = JSON.parse(currentCart);
+      console.log("🚀 ~ file: detail.js:44 ~ renderProduct ~ cart:", cart);
+      cart.push(addProduct);
+      localStorage.setItem("currentCart", JSON.stringify(cart));
+    } else {
+      const cart = [addProduct];
+      localStorage.setItem("currentCart", JSON.stringify(cart));
+    }
+  };
 };
 
 renderProduct();
