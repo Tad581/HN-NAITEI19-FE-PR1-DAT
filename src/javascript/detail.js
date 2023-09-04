@@ -20,11 +20,3 @@ imagesList[3].onclick = () => {
 imagesList[4].onclick = () => {
   mainImage.src = imagesList[4].src;
 };
-
-async function productsList() {
-  const response = await fetch("http://localhost:3000/products");
-  const products = await response.json();
-  console.log(products);
-}
-
-productsList();

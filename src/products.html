@@ -36,7 +36,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/feather-icons"></script>
   </head>
   <header id="drink-header" class="container-fluid">
     <div class="drink-banner drink-banner--no-bg">
@@ -186,19 +185,38 @@
               </p>
             </div>
             <div class="filter-category__items">
+              <ul class="category-items__list">
+                <li class="category-items__name active" data-custom-value="all">
+                  Tất cả
+                </li>
+              </ul>
+            </div>
+            <div class="filter-category__items">
               <h2 class="category-items__title">Rượu ngoại</h2>
               <ul class="category-items__list">
-                <li class="category-items__name active">Chivas</li>
-                <li class="category-items__name">Whisky</li>
-                <li class="category-items__name">Vodka</li>
+                <li class="category-items__name" data-custom-value="chivas">
+                  Chivas
+                </li>
+                <li class="category-items__name" data-custom-value="whisky">
+                  Whisky
+                </li>
+                <li class="category-items__name" data-custom-value="vodka">
+                  Vodka
+                </li>
               </ul>
             </div>
             <div class="filter-category__items">
               <h2 class="category-items__title">Rượu vang</h2>
               <ul class="category-items__list">
-                <li class="category-items__name">Rượu vang Pháp</li>
-                <li class="category-items__name">Rượu vang Mỹ</li>
-                <li class="category-items__name">Rượu vang Ý</li>
+                <li class="category-items__name" data-custom-value="france">
+                  Rượu vang Pháp
+                </li>
+                <li class="category-items__name" data-custom-value="usa">
+                  Rượu vang Mỹ
+                </li>
+                <li class="category-items__name" data-custom-value="italia">
+                  Rượu vang Ý
+                </li>
               </ul>
             </div>
           </div>
@@ -261,56 +279,10 @@
               </ul>
             </nav>
           </div>
-          <div class="products-list__products row">
-            <div class="product-thumbnail col-12 col-md-4">
-              <img
-                src="./img/products/2.jpg"
-                alt="product"
-                class="d-block w-100"
-              />
-              <div class="product-info product-info--center">
-                <a class="product-title product-title--new-size" href="#">
-                  Rượu vang đà lạt
-                </a>
-                <p class="product-price">330.000 <span>đ</span></p>
-                <div class="drink-btn">
-                  <a href="#">Add to cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="product-thumbnail col-12 col-md-4">
-              <img
-                src="./img/products/2.jpg"
-                alt="product"
-                class="d-block w-100"
-              />
-              <div class="product-info product-info--center">
-                <a class="product-title product-title--new-size" href="#">
-                  Rượu vang đà lạt
-                </a>
-                <p class="product-price">330.000 <span>đ</span></p>
-                <div class="drink-btn">
-                  <a href="#">Add to cart</a>
-                </div>
-              </div>
-            </div>
-            <div class="product-thumbnail col-12 col-md-4">
-              <img
-                src="./img/products/2.jpg"
-                alt="product"
-                class="d-block w-100"
-              />
-              <div class="product-info product-info--center">
-                <a class="product-title product-title--new-size" href="#">
-                  Rượu vang đà lạt
-                </a>
-                <p class="product-price">330.000 <span>đ</span></p>
-                <div class="drink-btn">
-                  <a href="#">Add to cart</a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div
+            class="products-list__products row"
+            id="products-list__products"
+          ></div>
         </div>
       </div>
     </div>
@@ -382,4 +354,6 @@
       </div>
     </div>
   </footer>
+
+  <script src="./javascript/product.js"></script>
 </html>
