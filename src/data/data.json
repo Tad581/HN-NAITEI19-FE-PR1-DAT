@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Rượu vang đà lạt",
+      "images": [
+        "./img/products/1.jpg",
+        "./img/products/2.jpg",
+        "./img/products/3.jpg",
+        "./img/products/4.jpg",
+        "./img/products/5.jpg"
+      ],
+      "prices": ["370.000", "450.000"]
+    },
+    {
+      "id": 2,
+      "name": "Rượu vang đà lạt",
+      "images": [
+        "./img/products/2.jpg",
+        "./img/products/3.jpg",
+        "./img/products/4.jpg",
+        "./img/products/5.jpg",
+        "./img/products/6.jpg"
+      ],
+      "prices": ["370.000", "450.000"]
+    },
+    {
+      "id": 3,
+      "name": "Rượu vang đà lạt",
+      "images": [
+        "./img/products/3.jpg",
+        "./img/products/4.jpg",
+        "./img/products/5.jpg",
+        "./img/products/6.jpg",
+        "./img/products/7.jpg"
+      ],
+      "prices": ["370.000", "450.000"]
+    },
+    {
+      "id": 4,
+      "name": "Rượu vang đà lạt",
+      "images": [
+        "./img/products/4.jpg",
+        "./img/products/5.jpg",
+        "./img/products/6.jpg",
+        "./img/products/7.jpg",
+        "./img/products/8.jpg"
+      ],
+      "prices": ["370.000", "450.000"]
+    },
+    {
+      "id": 5,
+      "name": "Rượu vang đà lạt",
+      "images": [
+        "./img/products/5.jpg",
+        "./img/products/6.jpg",
+        "./img/products/7.jpg",
+        "./img/products/8.jpg",
+        "./img/products/9.jpg"
+      ],
+      "prices": ["370.000", "450.000"]
+    }
+  ],
+  "carts": []
+}
