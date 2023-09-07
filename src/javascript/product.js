@@ -70,7 +70,7 @@ const renderProducts = async () => {
     <a class="product-title product-title--new-size" href="detail.html">${product.name}</a>
     <p class="product-price">${product.prices[0]} <span>đ</span></p>
     <div class="drink-btn">
-    <a href="#">Add to cart</a>
+    <a href="#" class="drink-btn__link" product-id="${product.id}">Add to cart</a>
     </div>
     </div>`;
     productNode.onclick = () => {
@@ -101,3 +101,46 @@ for (let i = 0; i < categoryList.length; i++) {
     renderProducts();
   };
 }
+
+const applyAction = async () => {
+  const addBtnNodes = document.getElementsByClassName("drink-btn__link");
+
+  for (let i = 0; i < addBtnNodes.length; i++) {
+    const productId = addBtnNodes[i].getAttribute("product-id");
+
+    const fetchUrl = `http://localhost:3000/products/${productId}`;
+    const response = await fetch(fetchUrl);
+    const product = await response.json();
+
+    addBtnNodes[i].onclick = () => {
+      const addProduct = {
+        productId: product.id,
+        name: product.name,
+        image: product.images[0],
+        price: Number.parseInt(product.prices[0]) * 1000,
+        quantity: 1,
+        total: Number.parseInt(product.prices[0]) * 1000,
+      };
+
+      const currentCart = localStorage.getItem("currentCart");
+      if (currentCart) {
+        const cart = JSON.parse(currentCart);
+        const oldProductIndex = cart.findIndex(
+          (item) => item.productId === addProduct.productId
+        );
+        if (oldProductIndex > -1) {
+          cart[oldProductIndex].quantity += addProduct.quantity;
+          cart[oldProductIndex].total += addProduct.total;
+        } else cart.push(addProduct);
+        localStorage.setItem("currentCart", JSON.stringify(cart));
+      } else {
+        const cart = [addProduct];
+        localStorage.setItem("currentCart", JSON.stringify(cart));
+      }
+    };
+  }
+};
+
+setTimeout(() => {
+  applyAction();
+}, 500);
